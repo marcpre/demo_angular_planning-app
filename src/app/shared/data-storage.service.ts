@@ -4,6 +4,7 @@ import 'rxjs/Rx';
 
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
+import { Response } from 'selenium-webdriver/http';
 
 @Injectable()
 export class DataStorageService {
@@ -11,6 +12,15 @@ export class DataStorageService {
  
   storeRecipes() {
     return this.http.put('https://ng-recipe-book-c9737.firebaseio.com/recipes.json', this.recipeService.getRecipes());
+  }
+
+  getRecipes() {
+    return this.http.get('https://ng-recipe-book-c9737.firebaseio.com/recipes.json').subscribe(
+      (response: Response) => {
+        const recipes: Recipe[] = response.json()
+        this.recipeService.setRecipes(recipes)
+      }
+    );
   }
 
 }
