@@ -32,5 +32,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Reduces code size and reduces startup time!
 
+# App deployment
 
----> Ending at 21/293
+1. Consider AoT Compilation
+2. Set the correct <base> element
+3. Make sure that the server always returns `index.html`
+
+
+
+
+
+---> Ending at 22/295
