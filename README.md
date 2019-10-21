@@ -39,7 +39,7 @@ Reduces code size and reduces startup time!
 3. Make sure that the server always returns `index.html`
 
 
+`ng  buld --prod --aot`
 
 
-
----> Ending at 22/295
+---> Ending at 22/296
